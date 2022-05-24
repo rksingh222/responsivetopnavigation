@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="responsivetopnav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="top-nav" id="mytopnav">
+        <a href="#" class="active">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </div>
+</body>
+
+<script>
+    function myFunction(){
+        var id = document.getElementById("mytopnav");
+        if(id.className == "top-nav"){
+            id.className += " responsive";
+        }else{
+            id.className = "top-nav";
+        }
+    }
+
+    $(document).ready(function(){
+        $('.top-nav a').click(function(){
+            $('.top-nav a.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
+
+</html>
